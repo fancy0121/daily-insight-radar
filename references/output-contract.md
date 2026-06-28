@@ -62,6 +62,8 @@ State:
 - supplementary items;
 - unresolved uncertainty.
 
+If fewer than five items satisfy the contract, do not generate a publishable full document or notification. Return a local diagnostic report instead.
+
 ## Message notification
 
 Keep the notification short:

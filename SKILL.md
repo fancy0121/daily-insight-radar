@@ -31,6 +31,8 @@ Use `assets/digest-template.md` as a structural starting point. Do not copy plac
 
 Browse current primary sources. Do not rely on memory for dates, titles, model claims, scores, roles, or links.
 
+Collect at least 20 plausible candidates before quality filtering. Scan multiple independent sources; never let one feed, platform, or author determine whether the day has content.
+
 Collect candidates from three independent layers:
 
 1. Primary Builder signals: original posts, official blogs, engineering notes, research releases, talks, and product explanations.
@@ -63,7 +65,8 @@ Apply the deterministic 100-point matrix in `references/quality-standard.md`. Ke
 - Do not reward fame by itself.
 - Do not let a famous guest beat a denser primary source without evidence.
 - Keep five to eight qualified signals by default.
-- If fewer than five pass after the 72-hour expansion, publish the actual number and explain the shortfall. Never fill space with weak content.
+- If fewer than five pass, expand source coverage and inspect the rejection evidence before concluding the run.
+- If the final result still has fewer than five items, fail closed: save diagnostics and do not create an external document or message.
 
 ### 5. Write the three-layer digest
 
@@ -111,6 +114,8 @@ Publish to an external document or message system only when the user has explici
 - a full document for the complete digest;
 - one short message containing the daily judgments, five item headlines with one-line Bottom lines, and the full-document link.
 
+Before any external write, assert that at least five items passed and every item has a Bottom line, mechanism, importance, reusable lesson, evidence, and original URL. Treat a zero-item or shortfall document as a failed run, never as a valid daily brief.
+
 On publish failure, keep the local file and report the failed stage. Do not silently retry a real external write.
 
 ## Failure rules
@@ -119,4 +124,5 @@ On publish failure, keep the local file and report the failed stage. Do not sile
 - If the language model or API needed for Chinese synthesis is unavailable, stop formal publishing.
 - If a podcast lacks a transcript, it may appear only as an unverified discovery note, never as a summarized insight.
 - If evidence conflicts, show the conflict and lower the score.
+- Record counts for fetched, preselected, summarized, quality-passing, and final items. When a run fails, preserve the rejection reasons instead of publishing internal filtering rules as reader-facing content.
 - Never expose API keys, tokens, user identities, folder IDs, or local authorization state.

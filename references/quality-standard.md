@@ -73,7 +73,22 @@ Before publishing:
 1. Open every selected original URL.
 2. Check at least five important assertions against source text or transcript.
 3. Confirm all podcast dates are known and no older than seven days.
-4. Confirm at least five qualified signals unless an explicit shortfall note is present.
+4. Confirm at least five qualified signals. A shortfall is a failed run and must not be published externally.
 5. Confirm every signal has a Bottom line, mechanism, importance, reusable lesson, and link.
 6. Confirm the five final takeaways are synthesized rather than copied from headings.
 7. Run `scripts/validate_digest.mjs`.
+
+## Failure-closed publishing
+
+Do not publish a document whose body says that no content was found. A retrieval or filtering shortfall describes pipeline state, not the state of the world.
+
+Persist a diagnostic ledger with:
+
+- fetched item count;
+- candidates surviving source and freshness filters;
+- items sent for synthesis;
+- items rejected by the quality gate and their reasons;
+- final selected count;
+- failed sources and timeouts.
+
+Internal filtering rules belong in diagnostics, not in the reader-facing brief.
