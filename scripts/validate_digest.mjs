@@ -29,12 +29,12 @@ const h1Count = (text.match(/^# /gm) || []).length;
 if (h1Count !== 1) errors.push(`Expected exactly one H1, found ${h1Count}`);
 
 const itemCount = (text.match(/^### /gm) || []).length;
-if (itemCount < 5) errors.push(`Expected at least 5 signal items, found ${itemCount}`);
+if (itemCount < 8) errors.push(`Expected at least 8 signal items, found ${itemCount}`);
 
 const fieldMinimums = [
-  ["Bottom line", 3],
-  ["为什么重要", 3],
-  ["可借鉴之处", 5]
+  ["Bottom line", 8],
+  ["为什么重要", 8],
+  ["可借鉴之处", 8]
 ];
 
 for (const [field, minimum] of fieldMinimums) {
@@ -43,7 +43,7 @@ for (const [field, minimum] of fieldMinimums) {
 }
 
 const urls = new Set(text.match(/https?:\/\/[^\s)>\]]+/g) || []);
-if (urls.size < 5) errors.push(`Expected at least 5 distinct original URLs, found ${urls.size}`);
+if (urls.size < 8) errors.push(`Expected at least 8 distinct original URLs, found ${urls.size}`);
 
 const chineseChars = (text.match(/[\u3400-\u9fff]/g) || []).length;
 if (chineseChars < 1200) errors.push(`Chinese substantive content is too short: ${chineseChars} characters`);

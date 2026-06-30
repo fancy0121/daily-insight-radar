@@ -15,6 +15,8 @@ Use sources in this order:
 
 Exclude rumor accounts, generic news rewrites, funding gossip, tool-list content, unexplained viral posts, and claims available only through screenshots.
 
+The Builder layer must come from the configured trusted original Builder feed and contain a concrete mechanism or action value. Independent-writer items must be the author's own analysis; reject quote-only posts, news roundups, community compilations, link digests, and rewritten reporting before synthesis.
+
 ## 100-point ranking matrix
 
 Score every candidate with evidence:
@@ -43,6 +45,7 @@ Fame, follower count, production quality, controversy, and virality receive no d
 - Verify publication date, title, author, URL, and quoted wording.
 - Distinguish facts, source opinions, and the digest author's inference.
 - Use transcript evidence for podcast claims. A title or description is insufficient.
+- Sample long transcripts evenly across their full duration. Do not compare a short episode's broad coverage against only the opening of a longer episode.
 - Preserve uncertainty. Write "the source argues", "the experiment suggests", or "this remains unverified" when appropriate.
 - Treat numeric claims as high-risk: verify the number, unit, sample, comparison, and source context.
 - Note commercial incentives when an author discusses their own product, company, or investment.
@@ -71,9 +74,9 @@ The layers are not quotas. If one layer has no qualified item, state that fact a
 Before publishing:
 
 1. Open every selected original URL.
-2. Check at least five important assertions against source text or transcript.
+2. Check at least eight important assertions against source text or transcript.
 3. Confirm all podcast dates are known and no older than seven days.
-4. Confirm at least five qualified signals. A shortfall is a failed run and must not be published externally.
+4. Confirm at least eight qualified signals. A shortfall is a failed run and must not be published externally.
 5. Confirm every signal has a Bottom line, mechanism, importance, reusable lesson, and link.
 6. Confirm the five final takeaways are synthesized rather than copied from headings.
 7. Run `scripts/validate_digest.mjs`.

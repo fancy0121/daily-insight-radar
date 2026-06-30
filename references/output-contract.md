@@ -62,7 +62,7 @@ State:
 - supplementary items;
 - unresolved uncertainty.
 
-If fewer than five items satisfy the contract, do not generate a publishable full document or notification. Return a local diagnostic report instead.
+If fewer than eight items satisfy the contract, do not generate a publishable full document or notification. Return a local diagnostic report instead.
 
 ## Message notification
 
@@ -70,7 +70,7 @@ Keep the notification short:
 
 - title and date;
 - three daily judgments;
-- five selected item titles with one-sentence Bottom lines;
+- at least eight selected item titles with one-sentence Bottom lines;
 - full-document link.
 
 Do not paste the full brief into chat.

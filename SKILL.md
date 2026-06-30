@@ -14,6 +14,7 @@ Before producing a digest, read:
 - `references/quality-standard.md` for ranking and evidence rules.
 - `references/source-pool.md` for the scored starter source pool.
 - `references/output-contract.md` for the required document structure.
+- `references/podcast-deep-dive.md` when selecting and writing a daily long-form podcast knowledge article.
 
 Use `assets/digest-template.md` as a structural starting point. Do not copy placeholder text into the final brief.
 
@@ -23,7 +24,7 @@ Use `assets/digest-template.md` as a structural starting point. Do not copy plac
 
 - Use the reader's local date and timezone.
 - Scan the latest 24 hours first.
-- Expand ordinary written signals to 72 hours only when fewer than five qualified items remain, and label them as supplementary.
+- Expand ordinary written signals to 72 hours when fewer than eight qualified items remain, and label them as supplementary.
 - Prefer podcast episodes from the latest 72 hours. Reject episodes older than seven days or without a reliable publication date.
 - Never present an older item as today's news.
 
@@ -31,15 +32,19 @@ Use `assets/digest-template.md` as a structural starting point. Do not copy plac
 
 Browse current primary sources. Do not rely on memory for dates, titles, model claims, scores, roles, or links.
 
-Collect at least 20 plausible candidates before quality filtering. Scan multiple independent sources; never let one feed, platform, or author determine whether the day has content.
+Collect at least 32 plausible candidates before quality filtering. Scan multiple independent sources; never let one feed, platform, or author determine whether the day has content.
 
 Collect candidates from three independent layers:
 
-1. Primary Builder signals: original posts, official blogs, engineering notes, research releases, talks, and product explanations.
+1. Primary Builder signals: original posts from the configured trusted Builder feed. Keep only posts with a concrete fact, mechanism, constraint, or action value.
 2. Recent podcast candidates: episodes with a transcript or reliable full text. Exclude the same-day long-form winner when a separate deep dive already covers it.
-3. Independent experts and engineering teams: recent original analysis from the scored source pool.
+3. Independent experts and engineering teams: recent original analysis and first-party engineering or research posts from the scored source pool.
 
 Prefer original URLs. Treat search results, reposts, newsletters that only summarize others, and popularity rankings as discovery aids rather than evidence.
+
+For podcast discovery, use verified channel feeds as the primary path and keyword search only as a supplement. A long-form winner requires at least five recent candidates and at least three usable transcripts.
+
+Reject secondary writer formats before model synthesis, including quote-only posts, news roundups, community-answer compilations, link digests, and rewritten reporting. A reputable platform does not make a community submission first-party evidence.
 
 ### 3. Create an evidence packet
 
@@ -64,9 +69,9 @@ Apply the deterministic 100-point matrix in `references/quality-standard.md`. Ke
 
 - Do not reward fame by itself.
 - Do not let a famous guest beat a denser primary source without evidence.
-- Keep five to eight qualified signals by default.
-- If fewer than five pass, expand source coverage and inspect the rejection evidence before concluding the run.
-- If the final result still has fewer than five items, fail closed: save diagnostics and do not create an external document or message.
+- Keep eight to ten qualified signals.
+- If fewer than eight pass, expand verified primary-source coverage and inspect the rejection evidence before concluding the run.
+- If the final result still has fewer than eight items, fail closed: save diagnostics and do not create an external document or message.
 
 ### 5. Write the three-layer digest
 
@@ -81,7 +86,7 @@ For each selected item explain in natural Chinese:
 - what the reader can reuse in learning, product, engineering, organization, investing, or entrepreneurship;
 - evidence and original link.
 
-Preserve an author's meaning. Keep verbatim excerpts short and necessary. Clearly separate source-backed statements from inference.
+Preserve an author's meaning. Keep verbatim excerpts short and necessary. Label source-backed facts or author views separately from the digest's inference and reusable advice.
 
 For each non-winning podcast candidate include its date, score, one-sentence topic, valuable insight, why it did not win, practical takeaway, transcript status, and original link.
 
@@ -103,7 +108,7 @@ Save the full brief as UTF-8 Markdown and run:
 node scripts/validate_digest.mjs path/to/digest.md
 ```
 
-Fix every error before calling the digest complete. Then manually verify at least five important claims against their original sources.
+Fix every error before calling the digest complete. Then manually verify at least eight important claims against their original sources.
 
 ### 8. Publish
 
@@ -112,9 +117,9 @@ Always keep the local Markdown artifact.
 Publish to an external document or message system only when the user has explicitly authorized the destination and write action. Use:
 
 - a full document for the complete digest;
-- one short message containing the daily judgments, five item headlines with one-line Bottom lines, and the full-document link.
+- one short message containing the daily judgments, at least eight item headlines with one-line Bottom lines, and the full-document link.
 
-Before any external write, assert that at least five items passed and every item has a Bottom line, mechanism, importance, reusable lesson, evidence, and original URL. Treat a zero-item or shortfall document as a failed run, never as a valid daily brief.
+Before any external write, assert that at least eight items passed and every item has a Bottom line, mechanism, importance, reusable lesson, evidence, and original URL. Treat a zero-item or shortfall document as a failed run, never as a valid daily brief.
 
 On publish failure, keep the local file and report the failed stage. Do not silently retry a real external write.
 
