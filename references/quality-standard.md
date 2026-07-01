@@ -67,7 +67,7 @@ The final brief must contain:
 2. Recent non-winning podcast candidates with transcripts.
 3. Independent experts or engineering teams from the scored pool.
 
-The layers are not quotas. If one layer has no qualified item, state that fact and add stronger items from another layer.
+The layers are not mechanical quotas, but an empty layer must be supported by rejection evidence. If the Builder pool contains a post with a concrete mechanism, constraint, implementation change, or actionable workflow, retain at least one Builder item. If the scored podcast pool contains transcript-backed non-winning candidates above the configured inclusion score and within seven days, retain two to three of them. If qualifying candidates exist before synthesis but the final layer is empty, fail closed instead of publishing an empty-layer explanation.
 
 ## Final audit
 
@@ -92,6 +92,8 @@ Persist a diagnostic ledger with:
 - items sent for synthesis;
 - items rejected by the quality gate and their reasons;
 - final selected count;
+- preselected, quality-passing, and final counts by layer;
+- layers that were required because qualifying candidates existed;
 - failed sources and timeouts.
 
 Internal filtering rules belong in diagnostics, not in the reader-facing brief.

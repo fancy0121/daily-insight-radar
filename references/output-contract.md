@@ -42,6 +42,8 @@ Use one H3 per episode and include:
 
 Never describe a non-winning candidate as rejected garbage. It lost the relative daily ranking but still passed the inclusion threshold.
 
+When the daily podcast scoring state contains qualified non-winning episodes, include two to three transcript-backed candidates. When the Builder pool contains qualified first-party posts, include at least one. A candidate-bearing layer that becomes empty after synthesis is a validation failure, not a publishable "no content" section.
+
 ## Daily judgments
 
 Write three to five cross-source conclusions. Each conclusion must connect at least two observations or explain a shared structural change.
