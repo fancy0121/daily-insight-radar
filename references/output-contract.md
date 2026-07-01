@@ -42,7 +42,7 @@ Use one H3 per episode and include:
 
 Never describe a non-winning candidate as rejected garbage. It lost the relative daily ranking but still passed the inclusion threshold.
 
-When the daily podcast scoring state contains qualified non-winning episodes, include two to three transcript-backed candidates. When the Builder pool contains qualified first-party posts, include at least one. A candidate-bearing layer that becomes empty after synthesis is a validation failure, not a publishable "no content" section.
+Match the accepted 2026-07-01 baseline: include at least three transcript-backed non-winning podcast candidates, at least two qualified first-party Builder posts, and five independent-expert or official-team items. Any shortfall is a validation failure, not a publishable "no content" section.
 
 ## Daily judgments
 
@@ -64,7 +64,7 @@ State:
 - supplementary items;
 - unresolved uncertainty.
 
-If fewer than eight items satisfy the contract, do not generate a publishable full document or notification. Return a local diagnostic report instead.
+If the ten-item 2/3/5 baseline is not satisfied, do not generate a publishable full document or notification. Return a local diagnostic report instead.
 
 ## Message notification
 
@@ -72,7 +72,7 @@ Keep the notification short:
 
 - title and date;
 - three daily judgments;
-- at least eight selected item titles with one-sentence Bottom lines;
+- all ten selected item titles with one-sentence Bottom lines;
 - full-document link.
 
 Do not paste the full brief into chat.

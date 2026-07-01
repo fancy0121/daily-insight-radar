@@ -58,6 +58,7 @@ Fame, follower count, production quality, controversy, and virality receive no d
 - Use short paragraphs, specific nouns, and direct verbs.
 - Keep quotations short. A quotation must preserve wording and add value that paraphrase would lose.
 - Do not imitate a source's personal voice or claim personal experience.
+- Cache synthesis by prompt version, model, and stable evidence identity. Repeated runs over unchanged evidence must reuse the same synthesis; prompt or evidence-version changes must invalidate the cache.
 
 ## Three-layer minimum
 
@@ -67,16 +68,16 @@ The final brief must contain:
 2. Recent non-winning podcast candidates with transcripts.
 3. Independent experts or engineering teams from the scored pool.
 
-The layers are not mechanical quotas, but an empty layer must be supported by rejection evidence. If the Builder pool contains a post with a concrete mechanism, constraint, implementation change, or actionable workflow, retain at least one Builder item. If the scored podcast pool contains transcript-backed non-winning candidates above the configured inclusion score and within seven days, retain two to three of them. If qualifying candidates exist before synthesis but the final layer is empty, fail closed instead of publishing an empty-layer explanation.
+The accepted baseline is two Builder items, three transcript-backed non-winning podcast candidates, and five independent-expert or official-team items. If any layer falls short, expand verified primary-source coverage or fail closed instead of publishing an empty-layer explanation.
 
 ## Final audit
 
 Before publishing:
 
 1. Open every selected original URL.
-2. Check at least eight important assertions against source text or transcript.
+2. Check all ten selected items against source text or transcript.
 3. Confirm all podcast dates are known and no older than seven days.
-4. Confirm at least eight qualified signals. A shortfall is a failed run and must not be published externally.
+4. Confirm ten qualified signals with at least two Builder items, three transcript-backed non-winning podcast candidates, and five independent-expert or official-team items. A shortfall is a failed run and must not be published externally.
 5. Confirm every signal has a Bottom line, mechanism, importance, reusable lesson, and link.
 6. Confirm the five final takeaways are synthesized rather than copied from headings.
 7. Run `scripts/validate_digest.mjs`.

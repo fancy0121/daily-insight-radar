@@ -24,7 +24,7 @@ Use `assets/digest-template.md` as a structural starting point. Do not copy plac
 
 - Use the reader's local date and timezone.
 - Scan the latest 24 hours first.
-- Expand ordinary written signals to 72 hours when fewer than eight qualified items remain, and label them as supplementary.
+- Expand ordinary written signals to 72 hours when fewer than ten qualified items remain, and label them as supplementary.
 - Prefer podcast episodes from the latest 72 hours. Reject episodes older than seven days or without a reliable publication date.
 - Never present an older item as today's news.
 
@@ -69,9 +69,10 @@ Apply the deterministic 100-point matrix in `references/quality-standard.md`. Ke
 
 - Do not reward fame by itself.
 - Do not let a famous guest beat a denser primary source without evidence.
-- Keep eight to ten qualified signals.
-- If fewer than eight pass, expand verified primary-source coverage and inspect the rejection evidence before concluding the run.
-- If the final result still has fewer than eight items, fail closed: save diagnostics and do not create an external document or message.
+- Keep ten qualified signals, matching the accepted 2026-07-01 baseline.
+- Require at least two Builder signals, three transcript-backed non-winning podcast candidates, and five independent-expert or official-team items.
+- If any layer falls below that baseline, expand verified primary-source coverage and inspect the rejection evidence.
+- If the final result still falls short, fail closed: save diagnostics and do not create an external document or message.
 
 ### 5. Write the three-layer digest
 
@@ -108,7 +109,7 @@ Save the full brief as UTF-8 Markdown and run:
 node scripts/validate_digest.mjs path/to/digest.md
 ```
 
-Fix every error before calling the digest complete. Then manually verify at least eight important claims against their original sources.
+Fix every error before calling the digest complete. Then manually verify all ten selected items against their original sources.
 
 ### 8. Publish
 
@@ -117,9 +118,9 @@ Always keep the local Markdown artifact.
 Publish to an external document or message system only when the user has explicitly authorized the destination and write action. Use:
 
 - a full document for the complete digest;
-- one short message containing the daily judgments, at least eight item headlines with one-line Bottom lines, and the full-document link.
+- one short message containing the daily judgments, all ten item headlines with one-line Bottom lines, and the full-document link.
 
-Before any external write, assert that at least eight items passed and every item has a Bottom line, mechanism, importance, reusable lesson, evidence, and original URL. Treat a zero-item or shortfall document as a failed run, never as a valid daily brief.
+Before any external write, assert that ten items passed with the required 2/3/5 layer distribution and every item has a Bottom line, mechanism, importance, reusable lesson, evidence, and original URL. Treat an empty-layer or shortfall document as a failed run, never as a valid daily brief.
 
 On publish failure, keep the local file and report the failed stage. Do not silently retry a real external write.
 
