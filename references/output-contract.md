@@ -83,4 +83,5 @@ Do not paste the full brief into chat.
 - The radar requires exactly ten qualified signals with the 2/3/5 layer distribution. The podcast workflow requires one transcript-backed long-form article within its configured Chinese-length range.
 - Never lower evidence, freshness, transcript, source, or writing standards to meet a deadline or item count.
 - A failed quality gate is not a successful delivery. Preserve diagnostics and use the configured retry or catch-up path; do not publish an empty or reduced document.
+- A scheduled deployment should run an idempotent delivery watchdog after the primary deadlines so transient outages can recover without waiting for the next login or the next day.
 - Treat external delivery as complete only after both the full-document identifier and notification-message identifier are recorded and verifiable.
