@@ -32,3 +32,12 @@ Run transcript content scoring twice and average each dimension. Sample long tra
 - Reject machine preambles, invalid timestamps, mixed quote/paraphrase labels, unsupported verification claims, and mechanically repeated section headings.
 
 Keep the candidate table concise and reader-facing. Preserve detailed diagnostics separately.
+
+## Runtime resilience
+
+- Retry transient model/network failures, but do not retry non-retryable 4xx errors blindly.
+- Keep fetch/tool errors in diagnostics. Never inject unbounded stderr, subtitle output, or tool traces into the generation prompt.
+- Set explicit limits for generation-prompt size, model response size, and repair-input size. Reject oversized intermediate output instead of feeding it back into the model.
+- Preserve beginning, middle, and ending transcript coverage when compressing long evidence.
+- Record the failed pipeline stage. A bare `fetch failed` message is not sufficient diagnosis.
+- Treat delivery as complete only when both the full-document identifier and the notification-message identifier are recorded.
