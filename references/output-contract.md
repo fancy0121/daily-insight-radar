@@ -89,3 +89,6 @@ Do not paste the full brief into chat.
 - Scope podcast-candidate deduplication to the comparison date. Preserve the original publication date and label repeated seven-day-window comparisons honestly.
 - Prefer podcast candidates above the normal score threshold. A lower-scoring transcript-backed candidate may fill a required slot only above an explicit cautious-backfill floor and must be labeled as lower confidence.
 - A mutex skip or concurrent-run skip is not delivery success. Recheck document and notification identifiers before returning success.
+- Run a machine-readable delivery audit after recovery attempts. Validate local artifacts, content gates, exact layer counts, stored document/message identifiers, and remote message visibility.
+- Persist audit results and deduplicate failure alerts by date and failure fingerprint.
+- Use three layers of control: scheduled execution, idempotent recovery plus audit, and an independent agent supervisor that diagnoses unresolved failures without weakening quality gates.
