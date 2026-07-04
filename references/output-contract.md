@@ -85,3 +85,7 @@ Do not paste the full brief into chat.
 - A failed quality gate is not a successful delivery. Preserve diagnostics and use the configured retry or catch-up path; do not publish an empty or reduced document.
 - A scheduled deployment should run an idempotent delivery watchdog after the primary deadlines so transient outages can recover without waiting for the next login or the next day.
 - Treat external delivery as complete only after both the full-document identifier and notification-message identifier are recorded and verifiable.
+- Expand the labeled supplemental window when any required layer is short, even if the raw candidate total is already above ten.
+- Scope podcast-candidate deduplication to the comparison date. Preserve the original publication date and label repeated seven-day-window comparisons honestly.
+- Prefer podcast candidates above the normal score threshold. A lower-scoring transcript-backed candidate may fill a required slot only above an explicit cautious-backfill floor and must be labeled as lower confidence.
+- A mutex skip or concurrent-run skip is not delivery success. Recheck document and notification identifiers before returning success.
