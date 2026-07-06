@@ -46,6 +46,8 @@ For podcast discovery, use verified channel feeds as the primary path and keywor
 
 Reject secondary writer formats before model synthesis, including quote-only posts, news roundups, community-answer compilations, link digests, and rewritten reporting. A reputable platform does not make a community submission first-party evidence.
 
+A high-trust official RSS entry that exposes only a title and canonical URL may enter full-text enrichment. Do not reject it merely because the feed description is empty. It may pass the final gate only after the original body is fetched and provides concrete, traceable evidence.
+
 ### 3. Create an evidence packet
 
 For every candidate record:
@@ -72,6 +74,7 @@ Apply the deterministic 100-point matrix in `references/quality-standard.md`. Ke
 - Keep ten qualified signals, matching the accepted 2026-07-01 baseline.
 - Require at least two Builder signals, three transcript-backed non-winning podcast candidates, and five independent-expert or official-team items.
 - If any layer falls below that baseline, expand verified primary-source coverage and inspect the rejection evidence.
+- When global deduplication exhausts a layer, distinguish already-used recent items from a true source shortage. Expand verified first-party coverage and allow multiple independent original topics from one high-trust author before failing closed; never repeat yesterday's item or lower the 2/3/5 baseline.
 - If the final result still falls short, fail closed: save diagnostics and do not create an external document or message.
 
 ### 5. Write the three-layer digest
