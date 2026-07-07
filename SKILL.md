@@ -32,7 +32,7 @@ Use `assets/digest-template.md` as a structural starting point. Do not copy plac
 
 Browse current primary sources. Do not rely on memory for dates, titles, model claims, scores, roles, or links.
 
-Collect at least 32 plausible candidates before quality filtering. Scan multiple independent sources; never let one feed, platform, or author determine whether the day has content.
+Collect at least 50 plausible candidates before quality filtering. Scan multiple independent sources; never let one feed, platform, or author determine whether the day has content. The runtime may send a smaller evidence-prioritized subset to the model for speed, but that subset must preserve the required layers first: Builder candidates, five transcript-backed podcast candidates when available, and independent/official sources.
 
 Collect candidates from three independent layers:
 
@@ -69,13 +69,17 @@ Reject a candidate when the source body is unavailable, the date is unknown, the
 
 Apply the deterministic 100-point matrix in `references/quality-standard.md`. Keep score evidence beside each dimension.
 
+Then convert every surviving evidence packet into a Signal Decision object and apply the 25-point editorial gate in the same reference. Extract, score, drop, deduplicate, and rank before writing any daily narrative.
+
 - Do not reward fame by itself.
 - Do not let a famous guest beat a denser primary source without evidence.
 - Keep ten qualified signals, matching the accepted 2026-07-01 baseline.
 - Require at least two Builder signals, three transcript-backed non-winning podcast candidates, and five independent-expert or official-team items.
 - If any layer falls below that baseline, expand verified primary-source coverage and inspect the rejection evidence.
+- If the same-day podcast pool has fewer than three usable non-winning candidates, recover from the seven-day transcript-backed candidate window. Preserve original publication dates and mark window re-comparisons honestly.
 - When global deduplication exhausts a layer, distinguish already-used recent items from a true source shortage. Expand verified first-party coverage and allow multiple independent original topics from one high-trust author before failing closed; never repeat yesterday's item or lower the 2/3/5 baseline.
 - If the final result still falls short, fail closed: save diagnostics and do not create an external document or message.
+- Preserve each candidate's theme, signal class, action tag, decision score, score evidence, and drop reason in diagnostics. Also record candidate-pool count, sent-for-summary count, quality-passing count, Signal Decision count, final layer counts, and the likely shortfall cause.
 
 ### 5. Write the three-layer digest
 

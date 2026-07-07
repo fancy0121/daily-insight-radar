@@ -27,6 +27,15 @@ Use one H3 per item and include:
 
 The key signal section must explain facts and mechanism, not repeat the headline.
 
+Every item must also show:
+
+- `Top Signal` for decision scores of 22 or more, otherwise `Secondary Signal`;
+- signal class and theme;
+- decision score out of 25;
+- the conservative action tag.
+
+These labels express editorial priority. They do not replace the three source layers or the 2/3/5 minimum.
+
 ## Podcast candidate
 
 Use one H3 per episode and include:
@@ -48,9 +57,16 @@ Match the accepted 2026-07-01 baseline: include at least three transcript-backed
 
 Write three to five cross-source conclusions. Each conclusion must connect at least two observations or explain a shared structural change.
 
+The section is Today's Core Judgment, not a recap of the first items. Each judgment must show the visible item indexes for at least two distinct supporting sources. Only connect sources through the same concrete mechanism, a same-domain problem and solution, a real tension, or an explicit boundary.
+
 ## Five takeaways
 
 Write exactly five numbered takeaways. Each must remain useful after the news cycle and be expressible as a decision rule, mental model, or concrete action.
+
+Organize the five takeaways as:
+
+- `What to Update`: two or three assumptions, models, or operating rules that should change now.
+- `Watch Next`: the remaining falsifiable watchpoints for the next day or week.
 
 ## Quality note
 
@@ -87,6 +103,8 @@ Do not paste the full brief into chat.
 - Treat external delivery as complete only after both the full-document identifier and notification-message identifier are recorded and verifiable.
 - Expand the labeled supplemental window when any required layer is short, even if the raw candidate total is already above ten.
 - Scope podcast-candidate deduplication to the comparison date. Preserve the original publication date and label repeated seven-day-window comparisons honestly.
+- When the same-day podcast pool is short, use the seven-day scored transcript pool to recover enough non-winning candidates before failing. The reader-facing item must show source date, comparison date, score, transcript status, and why it lost to the daily winner.
+- Diagnostics must distinguish candidate-pool size from model-summary size and identify the failing stage rather than reporting a generic missing run state when a quality gate blocked publication.
 - Prefer podcast candidates above the normal score threshold. A lower-scoring transcript-backed candidate may fill a required slot only above an explicit cautious-backfill floor and must be labeled as lower confidence.
 - A mutex skip or concurrent-run skip is not delivery success. Recheck document and notification identifiers before returning success.
 - Run a machine-readable delivery audit after recovery attempts. Validate local artifacts, content gates, exact layer counts, stored document/message identifiers, and remote message visibility.

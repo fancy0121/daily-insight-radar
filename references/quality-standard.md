@@ -40,6 +40,57 @@ Interpretation:
 
 Fame, follower count, production quality, controversy, and virality receive no direct points.
 
+## Signal Decision editorial gate
+
+The 100-point matrix determines whether the underlying material is sufficiently strong. Every survivor must then become a normalized Signal Decision object before final selection:
+
+- source type, source name, source role, title, canonical URL, and evidence excerpt;
+- one primary theme and one primary signal class;
+- one-sentence `why_it_matters` and `implication`;
+- one conservative action tag;
+- five positive scores, two penalties, total score, and machine-readable score evidence.
+
+Use these themes: `model_capability`, `inference_infra`, `agent_workflow`, `tool_interface`, `memory_context`, `evals_reliability`, `developer_experience`, `enterprise_adoption`, `org_talent`, `distribution_go_to_market`, `consumer_use_case`, `security_governance`.
+
+Use these signal classes: `product_signal`, `infra_signal`, `workflow_signal`, `research_signal`, `org_talent_signal`, `market_structure_signal`, `distribution_signal`, `warning_signal`.
+
+Score each positive dimension from 1 to 5:
+
+- novelty;
+- specificity;
+- decision value;
+- credibility;
+- durability.
+
+Subtract `hype_penalty` and `noise_penalty`, each from 0 to 3:
+
+`decision_score = novelty + specificity + decision_value + credibility + durability - hype_penalty - noise_penalty`
+
+Interpretation:
+
+- `22-25`: Lead / Top Signal.
+- `18-21`: Publish / Secondary Signal.
+- `15-17`: Diagnostic only; never use as formal backfill.
+- Below `15`: Drop.
+
+Credibility must be code-controlled from the verified source policy and trust score. Fame and popularity cannot raise it. Keep score evidence for every dimension. Reject missing URLs, missing evidence, promotion without information gain, social chatter, old consensus without a new angle, and candidates whose importance or implication cannot be stated cleanly.
+
+Deduplicate at the theme and event level after scoring. When two different links express the same theme, signal class, and substantially similar event, keep the stronger evidence record. URL uniqueness alone does not establish signal uniqueness.
+
+Published action tags are `watch`, `test`, `adopt`, or `escalate`; choose the smallest honest action. `ignore` belongs only in dropped diagnostics.
+
+Feed at least five dated, transcript-backed, evidence-scored non-winning podcast candidates into the editorial gate when available, so a sub-threshold item does not make the required final three impossible. A cautious discovery floor as low as 48/100 may decide whether a candidate reaches this second gate, but it is not publication approval. Expand transcript-backed coverage instead of lowering the formal 18/25 threshold.
+
+The daily radar must build a supply pool of at least 50 plausible trusted candidates before final filtering. For runtime speed, the model-facing summary subset may be capped around 30 items, but it must preserve the required layers first: up to the configured Builder candidate cap, at least five transcript-backed non-winning podcast candidates when available, and enough independent/official sources to satisfy the final 5-item layer. A small model-facing subset is acceptable only when the larger candidate pool and layer diagnostics are preserved.
+
+When the same-day podcast candidate pool is thin, recover from the seven-day transcript-backed scored candidate window. Do not lower transcript, evidence, or score requirements. Label the original publication date and comparison date so a window re-comparison is not misrepresented as a same-day release.
+
+After the final ten are fixed, synthesize Today's Core Judgment in a separate evidence-only pass. Every judgment must retain visible indexes for at least two distinct sources and classify the relationship as the same concrete mechanism, a problem and solution in the same domain, a real tension, or an explicit boundary. Broad shared words such as AI, feedback, iteration, efficiency, or user experience do not establish a relationship.
+
+Do not turn a descriptive number into a mandatory threshold. Every Arabic number in an action or watchpoint must appear verbatim in the selected evidence. Reject claims such as proof, inevitability, complete replacement, or universal adoption when the evidence is only a small set of cases.
+
+An incomplete model batch is a failed batch. Missing indexes, missing required fields, or debug fallback text must never enter the formal synthesis cache. Key the cache on prompt version, model, canonical URL, source body, and stable evidence identity.
+
 ## Evidence rules
 
 - Verify publication date, title, author, URL, and quoted wording.
@@ -90,10 +141,12 @@ Persist a diagnostic ledger with:
 
 - fetched item count;
 - candidates surviving source and freshness filters;
+- candidates sent to model summarization;
 - items sent for synthesis;
 - items rejected by the quality gate and their reasons;
 - final selected count;
 - preselected, quality-passing, and final counts by layer;
+- Signal Decision counts and layer shortfall causes;
 - layers that were required because qualifying candidates existed;
 - failed sources and timeouts.
 
